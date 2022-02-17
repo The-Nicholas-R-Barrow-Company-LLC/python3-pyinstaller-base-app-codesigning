@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "UUID: " && read UUID
+xcrun altool --username "something@domain.com" --password "@keychain:Developer-altool" --notarization-info $UUID

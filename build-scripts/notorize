@@ -1,0 +1,7 @@
+#!/bin/bash
+
+APP="My New App"
+PKG=./dist/"$APP".pkg
+
+xcrun altool --notarize-app --primary-bundle-id "com.domain.project" --username="something@domain.com" --password "@keychain:Developer-altool" --file "$PKG"
+    # if it fails: xcrun altool --username "comething@domain.com" --password "@keychain:Developer-altool" --notarization-info "Your-Request-UUID"

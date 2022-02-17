@@ -1,0 +1,3 @@
+#!/bin/bash
+SPEC='app.spec'
+pyinstaller --noconfirm $SPEC

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# identifier for the package
+PKG_IDENTIFIER="com.domain.project.pkg"
+
+# app version
+APP_VERSION=0.1
+
+# app name (must match the pre .app portion)
+APP_NAME="My New App"
+
+# where is the app
+APP_PATH=./dist/"$APP_NAME".app
+
+# where to build the temporary pkgbuild package
+TMP_PKG_PATH=./tmp/pkg.pkg
+
+# Scripts path: must end in "Scripts/"
+SCRIPTS=./build-scripts/Scripts/
+# make sure scripts are executable
+sudo chmod -R +x $SCRIPTS
+
+# where to put the signed package
+SIGNED_PKG=./dist/"$APP_NAME".pkg
+
+# Use 'security find-identity -p basic -v' in terminal and use the hash to the left of 'Developer ID Installer...'
+DEVELOPER_ID_INSTALLER_HASH=""
+
+# build initial component
+pkgbuild --identifier $PKG_IDENTIFIER \
+         --sign "$DEVELOPER_ID_INSTALLER_HASH" \
+         --version $APP_VERSION \
+         --root "$APP_PATH" \
+         --scripts "$SCRIPTS" \
+         --install-location /Applications/"$APP_NAME".app "$TMP_PKG_PATH"
+
+productsign --sign "$DEVELOPER_ID_INSTALLER_HASH" "$TMP_PKG_PATH" "$SIGNED_PKG"

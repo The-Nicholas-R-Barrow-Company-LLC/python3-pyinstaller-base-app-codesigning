@@ -1,0 +1,4 @@
+#!/bin/bash
+APP="My New App"
+PKG=./dist/"$APP".pkg
+xcrun stapler staple "$PKG"

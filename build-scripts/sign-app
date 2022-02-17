@@ -1,0 +1,14 @@
+#!/bin/bash
+APP="My New App"
+APPFILE=./dist/"$APP".app
+
+# Use 'security find-identity -p basic -v' in terminal and use the hash to the left of 'Developer ID Application...'
+DEVELOPER_ID_APPLICATION=""
+
+codesign --deep --force --timestamp --options runtime --entitlements ./entitlements.plist --sign "$DEVELOPER_ID_APPLICATION" "$APPFILE"
+# -f -s
+# verify signature: 
+echo "[sign-app] verifying signature" 
+codesign --verify --verbose "$APPFILE"
+# checks notary: spctl --assess --verbose $APPFILE
+codesign -dvvv "$APPFILE"
