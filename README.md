@@ -41,7 +41,8 @@ choose Apple ID
 - copy the appropriate hashes into the build file in 
 > ./build-scripts/build
 ## Step 3: Configure the ./build-scripts/build File
-There are explanatory comments next to each variable at the top as to what they represent. Additionally, you will need to configure two settings in the .spec file:
+There are explanatory comments next to each variable at the top of the ```./build-scripts/build``` as to what they represent. You must fill these out for this to work.
+Additionally, you will need to configure two settings in the .spec file:
 ### Create your Identifiers
 - developer.apple.com
 - choose "account" in top right
@@ -57,3 +58,8 @@ There are explanatory comments next to each variable at the top as to what they 
 >              name='My New App.app',
 >              icon=None,
 >              bundle_identifier=bundle_id)
+# Coding Your App
+Begin to code your application in the ```./app/app.py``` file. When you are satisfied, proceed to the next section.
+# Building & Packaging Your App
+Individual scripts are provided in the ```./build-scripts/``` directory. Here, you can customize the individual level scripts so you can choose which process to run (i.e., you may want to build your .app for testing purposes and therefore do not want a .pkg or to notorize)
+The main workflow is in ```./build-scripts/build``` and can be run with ```bash ./build-scripts/build```.
