@@ -63,3 +63,6 @@ Begin to code your application in the ```./app/app.py``` file. When you are sati
 # Building & Packaging Your App
 Individual scripts are provided in the ```./build-scripts/``` directory. Here, you can customize the individual level scripts so you can choose which process to run (i.e., you may want to build your .app for testing purposes and therefore do not want a .pkg or to notorize)
 The main workflow is in ```./build-scripts/build``` and can be run with ```bash ./build-scripts/build```.
+# Advanced Customization
+## Pre- and Post-Install Scripting
+You can view the ```./build-scripts/Scripts``` directory to see what is included. You (as far as I know) cannot change the filenames. However, you can do almost anything you'd like inside them. The ```preinstall``` is called, as it suggests, prior to installing, just as the ```postinstall``` occurs after-the-fact. Currently, it defaults to no preinstall processes and one postinstall process which makes changes the program's permissions. NOTE: if the application does not have 777-style permissions, you will likely run into problems (as I did) because the app will not be able to write data; it is best to leave these alone unless you know what you're doing.
