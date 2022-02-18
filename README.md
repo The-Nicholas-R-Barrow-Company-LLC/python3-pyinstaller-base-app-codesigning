@@ -2,10 +2,12 @@
 Base project example to create an application with Python3 and PyInstaller, including all necessary build scripts.
 
 This Repo creates a project that you can clone to streamline MacOS python desktop app development. It contains all necessary scripts to build your final project, as well as code-sign them from Apple (Developer Account required).
-
+# Support
+This currently supports (and has been tested on) Python 3.9.9 on MacOS 11.6. This tool may work on other systems, but has not been tested.
 # Setup
 ## Precursor: Install PyInstaller
 You should have PyInstaller installed in a global or virtual environment (```pip3 install pyinstaller```). This is the only Python dependency.
+Alternatively, you can use ```pip3 install -r requirements.txt```. 
 ## Part 1: Developer Account
 Note: This section is taken from: https://gist.github.com/txoof/0636835d3cc65245c6288b2374799c43
 ### (1/2) Create a developer account with Apple
