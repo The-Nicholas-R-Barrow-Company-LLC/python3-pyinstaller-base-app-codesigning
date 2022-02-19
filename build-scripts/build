@@ -14,7 +14,7 @@ SIGNED_PKG=./dist/"$APP_NAME".pkg       # where to put the signed package
 ### HASHES OF DEVELOPER IDS ###
 # Use command (without quotes) 'security find-identity -p basic -v' in terminal 
 # the hash (HSHSD...HFJSJ) to the left of 'Developer ID Application...' is for DEVELOPER_ID_APPLICAITON
-# the hash (DJJSH...HDHDH) to the left of 'Installer ID Application...' is for DEVELOPER_ID_INSTALLER_HASH
+# the hash (DJJSH...HDHDH) to the left of 'Installer ID Installer...' is for DEVELOPER_ID_INSTALLER_HASH
 DEVELOPER_ID_APPLICATION=""
 DEVELOPER_ID_INSTALLER_HASH=""
 
