@@ -1,3 +1,7 @@
+# MOVED TO PyMacApp
+To support PyPi installers, this was moved to https://github.com/The-Nicholas-R-Barrow-Company-LLC/PyMacApp
+```pip3 install PyMacApp```
+
 # python3-pyinstaller-base-app-codesigning
 Base project example to create an application with Python3 and PyInstaller, including all necessary build scripts.
 
